@@ -9,7 +9,7 @@
 // document.querySelector('.guess').value = 23;
 // console.log(document.querySelector('.guess').value);
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1; // nr 1-20
+let secretNumber = Math.trunc(Math.random() * 20) + 1; // nr 1-20
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -45,6 +45,9 @@ document.querySelector('.check').addEventListener('click', function () {
 })
 
 const resetGame = function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
   // hide guess number
   document.querySelector('.number').textContent = '?';
   // default start text
