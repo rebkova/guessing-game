@@ -22,13 +22,15 @@ document.querySelector('.check').addEventListener('click', function () {
     if (score > 1) {
       score--;
       document.querySelector('.score').textContent = score;
-      displayMessage(guessedValue > secretNumber ? '📈 Too high!' : '📉 Too low!');
+      displayMessage(
+        guessedValue > secretNumber ? '📈 Too high!' : '📉 Too low!'
+      );
     } else {
       displayMessage('💥 You lost the game!');
       document.querySelector('.score').textContent = 0;
     }
   }
-})
+});
 
 const resetGame = function () {
   score = 20;
@@ -47,6 +49,6 @@ const resetGame = function () {
   document.querySelector('body').style.backgroundColor = '#222';
   // number size frame smaller
   document.querySelector('.number').style.width = '15rem';
-}
+};
 
 document.querySelector('.again').addEventListener('click', resetGame);
